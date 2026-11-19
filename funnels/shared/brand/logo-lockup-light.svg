@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 56" width="300" height="56" role="img" aria-label="Reservoir Property Ventures">
+  <rect x="0" y="4" width="48" height="48" rx="11" fill="rgba(255,255,255,0.08)"/>
+  <g fill="none" stroke="#26B0AE" stroke-width="2.6" stroke-linecap="round">
+    <path d="M10 35a14 14 0 0 1 28 0"/>
+    <path d="M16.5 35a7.5 7.5 0 0 1 15 0" stroke="#E39A2E"/>
+  </g>
+  <path d="M9 41.5h30" stroke="#F3EDE3" stroke-width="2.6" stroke-linecap="round"/>
+  <text x="64" y="27" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="2.9" fill="#FBF8F3">RESERVOIR</text>
+  <text x="64" y="43" font-family="Inter, Helvetica, Arial, sans-serif" font-size="9.5" font-weight="500" letter-spacing="2.7" fill="rgba(251,248,243,0.65)">PROPERTY VENTURES</text>
+</svg>

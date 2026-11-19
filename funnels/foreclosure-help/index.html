@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stop the Clock on Foreclosure | Reservoir Property Ventures</title>
+<meta name="description" content="Behind on payments? You have more options than the bank has told you. Talk to Reservoir Property Ventures — no fees, no obligation, no judgement.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Inter:wght@400..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../shared/brand/brand.css">
+<link rel="stylesheet" href="../shared/forms/lead-form.css">
+<link rel="stylesheet" href="page.css">
+</head>
+
+<body>
+
+<!-- ======================= TOP BAR ======================= -->
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="rpv-logo" href="#top">
+      <svg class="rpv-logo__mark" viewBox="0 0 48 48" aria-hidden="true">
+        <rect width="48" height="48" rx="11" fill="currentColor" opacity=".12"/>
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+          <path d="M10 31a14 14 0 0 1 28 0"/>
+          <path d="M16.5 31a7.5 7.5 0 0 1 15 0" opacity=".6"/>
+        </g>
+        <path d="M9 37.5h30" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity=".45"/>
+      </svg>
+      <span class="rpv-logo__text">
+        <span class="rpv-logo__name">Reservoir</span>
+        <span class="rpv-logo__sub">Property Ventures</span>
+      </span>
+    </a>
+
+    <a class="topbar__phone" href="tel:+15550100199">
+      <span class="topbar__phone-label">Talk to a person</span>
+      <span class="topbar__phone-number">(555) 010-0199</span>
+    </a>
+  </div>
+</header>
+
+<!-- ======================= HERO ======================= -->
+<main id="top">
+<section class="hero">
+
+  <!-- decorative contour lines, like water depth on a map -->
+  <svg class="hero__contours" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="1.1">
+      <path d="M-40 610C180 540 320 650 520 600s300-180 520-140 380 10 480-40" opacity=".30"/>
+      <path d="M-40 540C170 470 330 580 540 520s290-190 500-150 390 20 480-30" opacity=".24"/>
+      <path d="M-40 470C160 400 340 510 560 440s280-200 480-160 400 30 480-20" opacity=".18"/>
+      <path d="M-40 400C150 330 350 440 580 360s270-210 460-170 410 40 480-10" opacity=".13"/>
+      <path d="M-40 330C140 260 360 370 600 280s260-220 440-180 420 50 480 0" opacity=".09"/>
+      <path d="M-40 260C130 190 370 300 620 200s250-230 420-190 430 60 480 10" opacity=".06"/>
+    </g>
+  </svg>
+
+  <div class="hero__inner">
+
+    <div class="hero__copy">
+      <p class="hero__eyebrow"><span class="hero__pulse" aria-hidden="true"></span>Pre-foreclosure assistance</p>
+
+      <h1 class="hero__title">
+        You have more options left than
+        <em>anyone has told you.</em>
+      </h1>
+
+      <p class="hero__lead">
+        A notice in the mail is not the end of the road — it's a deadline. We buy
+        houses in pre-foreclosure across the state, and we'll walk you through
+        every route out, including the ones that don't involve selling to us.
+      </p>
+
+      <ul class="hero__trust">
+        <li><strong>No fees</strong><span>Ever, at any stage</span></li>
+        <li><strong>48 hours</strong><span>To a written offer</span></li>
+        <li><strong>You choose</strong><span>The closing date</span></li>
+      </ul>
+    </div>
+
+    <!-- ---------- FORM CARD ---------- -->
+    <aside class="form-card" id="form">
+      <div class="form-card__flag">Free &amp; confidential</div>
+
+      <h2 class="form-card__title">Find out where you stand</h2>
+      <p class="form-card__sub">
+        Tell us about the property. We'll come back within one business day with
+        the options actually available to you.
+      </p>
+
+      <!-- Form markup: shared/forms/lead-form.html -->
+      <form class="rpv-form" data-rpv-form novalidate>
+        <input type="hidden" name="funnel" value="foreclosure-help">
+
+        <div class="rpv-form__row">
+          <div class="rpv-field">
+            <label for="lf-name">Your name</label>
+            <input id="lf-name" name="full_name" type="text" autocomplete="name"
+                   placeholder="Jane Doe" data-label="Your name" required>
+            <span class="rpv-field__error"></span>
+          </div>
+          <div class="rpv-field">
+            <label for="lf-phone">Phone</label>
+            <input id="lf-phone" name="phone" type="tel" autocomplete="tel"
+                   placeholder="(555) 010-0199" data-label="Phone" required>
+            <span class="rpv-field__error"></span>
+          </div>
+        </div>
+
+        <div class="rpv-field">
+          <label for="lf-email">Email</label>
+          <input id="lf-email" name="email" type="email" autocomplete="email"
+                 placeholder="jane@example.com" data-label="Email" required>
+          <span class="rpv-field__error"></span>
+        </div>
+
+        <div class="rpv-field">
+          <label for="lf-address">Property address</label>
+          <input id="lf-address" name="property_address" type="text" autocomplete="street-address"
+                 placeholder="128 Mill Creek Rd, Springfield" data-label="Property address" required>
+          <span class="rpv-field__error"></span>
+        </div>
+
+        <div class="rpv-field">
+          <label for="lf-timeline">How soon do you need to move?</label>
+          <select id="lf-timeline" name="timeline" data-label="Timeline" required>
+            <option value="">Choose one…</option>
+            <option value="asap">As soon as possible</option>
+            <option value="30-days">Within 30 days</option>
+            <option value="90-days">Within 90 days</option>
+            <option value="exploring">Just exploring my options</option>
+          </select>
+          <span class="rpv-field__error"></span>
+        </div>
+
+        <div class="rpv-field rpv-consent">
+          <input id="lf-consent" name="consent" type="checkbox" value="yes" required>
+          <label for="lf-consent"><span>
+            It's OK to contact me by phone, text and email about my property.
+            Message rates may apply. I can opt out any time.
+          </span></label>
+          <span class="rpv-field__error"></span>
+        </div>
+
+        <button class="rpv-form__submit" type="submit">Show me my options</button>
+
+        <div class="rpv-form__status" role="status" aria-live="polite"></div>
+
+        <p class="rpv-form__note">
+          No obligation. No fees. We never sell your information.
+        </p>
+      </form>
+    </aside>
+
+  </div>
+</section>
+
+<!-- ======================= TIMELINE ======================= -->
+<section class="stages">
+  <div class="stages__head">
+    <p class="rpv-eyebrow stages__eyebrow">The clock</p>
+    <h2 class="stages__title">Every stage still has a way out — they just get narrower</h2>
+  </div>
+
+  <ol class="stages__rail">
+    <li class="stage">
+      <span class="stage__dot" aria-hidden="true"></span>
+      <span class="stage__when">Day 1–90</span>
+      <h3 class="stage__name">Missed payments</h3>
+      <p>The widest set of choices you will ever have. Reinstatement, forbearance, a quiet sale on your terms.</p>
+    </li>
+
+    <li class="stage stage--now">
+      <span class="stage__dot" aria-hidden="true"></span>
+      <span class="stage__when">Most people call here</span>
+      <h3 class="stage__name">Notice of default</h3>
+      <p>The letter that makes it real. There is still room to sell, refinance, or negotiate — but the calendar is running.</p>
+    </li>
+
+    <li class="stage">
+      <span class="stage__dot" aria-hidden="true"></span>
+      <span class="stage__when">21+ days out</span>
+      <h3 class="stage__name">Auction scheduled</h3>
+      <p>Tight, but not over. A cash sale can close ahead of the sale date and stop it going to auction at all.</p>
+    </li>
+
+    <li class="stage stage--last">
+      <span class="stage__dot" aria-hidden="true"></span>
+      <span class="stage__when">After the gavel</span>
+      <h3 class="stage__name">Auction day</h3>
+      <p>Control passes to someone else, and the hit to your credit follows you for years. Don't let it get here.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- ======================= STRAIGHT TALK ======================= -->
+<section class="straight">
+  <div class="straight__grid">
+    <div class="straight__intro">
+      <p class="rpv-eyebrow">Straight talk</p>
+      <h2>We'd rather be honest than close every deal</h2>
+      <p class="straight__note">
+        We're investors, not a charity and not your attorney. Here's exactly what
+        that means for you, before you pick up the phone.
+      </p>
+    </div>
+
+    <ul class="straight__list straight__list--do">
+      <li>Give you a written cash offer inside 48 hours</li>
+      <li>Close in as few as 7 days, or wait months if that suits you better</li>
+      <li>Buy the house exactly as it stands — no repairs, no cleaning, no showings</li>
+      <li>Cover the standard closing costs</li>
+      <li>Tell you plainly when a realtor or a loan modification would serve you better</li>
+    </ul>
+
+    <ul class="straight__list straight__list--dont">
+      <li>Charge you a fee at any point</li>
+      <li>Give you legal or tax advice — please talk to a professional</li>
+      <li>Promise full retail price; a cash offer trades some price for speed and certainty</li>
+      <li>Pressure you. One call, one offer, and the decision is yours</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======================= QUOTE ======================= -->
+<section class="quote">
+  <blockquote>
+    <p>I'd stopped opening the mail. They made the first call I'd had in months
+    that didn't feel like a threat — and we closed eleven days before the auction date.</p>
+    <footer><span class="quote__name">Marcus D.</span><span class="quote__meta">Sold pre-auction · Riverside County</span></footer>
+  </blockquote>
+</section>
+
+<!-- ======================= CLOSER ======================= -->
+<section class="closer">
+  <h2>The sooner you call, the more doors are still open.</h2>
+  <a class="rpv-btn closer__btn" href="#form">Get my options</a>
+  <p class="closer__or">or call <a href="tel:+15550100199">(555) 010-0199</a> — a real person, seven days a week</p>
+</section>
+</main>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="foot">
+  <div class="foot__inner">
+    <p class="foot__brand">Reservoir Property Ventures</p>
+    <p class="foot__legal">
+      Reservoir Property Ventures is a real estate investment company. We are not
+      attorneys, accountants, lenders or a government agency, and nothing on this
+      page is legal, tax or financial advice. We buy property for our own account
+      and intend to profit when we resell it. Please seek independent professional
+      advice before making a decision about your home.
+    </p>
+    <p class="foot__copy">© 2026 Reservoir Property Ventures · (555) 010-0199</p>
+  </div>
+</footer>
+
+<script src="../shared/forms/form-config.js"></script>
+<script src="../shared/forms/lead-form.js"></script>
+</body>
+</html>

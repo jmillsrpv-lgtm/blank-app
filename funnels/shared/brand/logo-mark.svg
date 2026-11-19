@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Reservoir Property Ventures mark">
+  <rect width="48" height="48" rx="11" fill="#0E3440"/>
+  <g fill="none" stroke="#26B0AE" stroke-width="2.6" stroke-linecap="round">
+    <path d="M10 31a14 14 0 0 1 28 0"/>
+    <path d="M16.5 31a7.5 7.5 0 0 1 15 0" stroke="#E39A2E"/>
+  </g>
+  <path d="M9 37.5h30" stroke="#F3EDE3" stroke-width="2.6" stroke-linecap="round"/>
+</svg>

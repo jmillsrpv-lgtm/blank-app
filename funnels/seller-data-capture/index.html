@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Is Your Property Actually Worth? | Reservoir Property Ventures</title>
+<meta name="description" content="A real number for your property, worked out from local sales — not an automated guess. Free property report from Reservoir Property Ventures.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Inter:wght@400..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../shared/brand/brand.css">
+<link rel="stylesheet" href="../shared/forms/lead-form.css">
+<link rel="stylesheet" href="page.css">
+</head>
+
+<body>
+
+<!-- ======================= MASTHEAD ======================= -->
+<header class="masthead">
+  <div class="masthead__inner">
+    <a class="rpv-logo" href="#top">
+      <svg class="rpv-logo__mark" viewBox="0 0 48 48" aria-hidden="true">
+        <rect width="48" height="48" rx="11" fill="currentColor" opacity=".12"/>
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+          <path d="M10 31a14 14 0 0 1 28 0"/>
+          <path d="M16.5 31a7.5 7.5 0 0 1 15 0" opacity=".6"/>
+        </g>
+        <path d="M9 37.5h30" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity=".45"/>
+      </svg>
+      <span class="rpv-logo__text">
+        <span class="rpv-logo__name">Reservoir</span>
+        <span class="rpv-logo__sub">Property Ventures</span>
+      </span>
+    </a>
+    <p class="masthead__file">File No. <span>RPV-2026</span> · Valuation Desk</p>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ======================= HERO / WORKSHEET ======================= -->
+<section class="sheet">
+  <div class="sheet__inner">
+
+    <div class="sheet__copy">
+      <p class="sheet__eyebrow">Free property report</p>
+
+      <h1 class="sheet__title">
+        What is it
+        <span class="sheet__title-row">
+          <span class="sheet__rule" aria-hidden="true"></span>
+          actually
+        </span>
+        worth?
+      </h1>
+
+      <p class="sheet__lead">
+        Not an algorithm's guess from a website. A figure worked out by a person
+        who has walked streets like yours — built from what comparable homes
+        nearby actually sold for in the last ninety days.
+      </p>
+
+      <dl class="facts">
+        <div class="fact">
+          <dt>Comparable sales we pull</dt>
+          <dd><span class="fact__num">30</span><span class="fact__unit">within ½ mile</span></dd>
+        </div>
+        <div class="fact">
+          <dt>Turnaround on your report</dt>
+          <dd><span class="fact__num">24</span><span class="fact__unit">hours or less</span></dd>
+        </div>
+        <div class="fact">
+          <dt>Cost to you</dt>
+          <dd><span class="fact__num">$0</span><span class="fact__unit">no catch</span></dd>
+        </div>
+      </dl>
+
+      <p class="sheet__aside">
+        Most owners we speak to are out by <strong>11%</strong> on what their
+        property is worth — in both directions.
+      </p>
+    </div>
+
+    <!-- ---------- WORKSHEET FORM ---------- -->
+    <aside class="worksheet" id="form">
+      <div class="worksheet__stamp" aria-hidden="true">
+        <span>No<br>fee</span>
+      </div>
+
+      <header class="worksheet__head">
+        <p class="worksheet__kicker">Property worksheet</p>
+        <h2 class="worksheet__title">Tell us about the place</h2>
+        <p class="worksheet__sub">Five lines. Your report follows by email and phone.</p>
+      </header>
+
+      <!-- Form markup: shared/forms/lead-form.html -->
+      <form class="rpv-form" data-rpv-form novalidate>
+        <input type="hidden" name="funnel" value="seller-data-capture">
+
+        <div class="rpv-form__row">
+          <div class="rpv-field">
+            <label for="lf-name">Your name</label>
+            <input id="lf-name" name="full_name" type="text" autocomplete="name"
+                   placeholder="Jane Doe" data-label="Your name" required>
+            <span class="rpv-field__error"></span>
+          </div>
+          <div class="rpv-field">
+            <label for="lf-phone">Phone</label>
+            <input id="lf-phone" name="phone" type="tel" autocomplete="tel"
+                   placeholder="(555) 010-0199" data-label="Phone" required>
+            <span class="rpv-field__error"></span>
+          </div>
+        </div>
+
+        <div class="rpv-field">
+          <label for="lf-email">Email</label>
+          <input id="lf-email" name="email" type="email" autocomplete="email"
+                 placeholder="jane@example.com" data-label="Email" required>
+          <span class="rpv-field__error"></span>
+        </div>
+
+        <div class="rpv-field">
+          <label for="lf-address">Property address</label>
+          <input id="lf-address" name="property_address" type="text" autocomplete="street-address"
+                 placeholder="128 Mill Creek Rd, Springfield" data-label="Property address" required>
+          <span class="rpv-field__error"></span>
+        </div>
+
+        <div class="rpv-field">
+          <label for="lf-timeline">How soon do you need to move?</label>
+          <select id="lf-timeline" name="timeline" data-label="Timeline" required>
+            <option value="">Choose one…</option>
+            <option value="asap">As soon as possible</option>
+            <option value="30-days">Within 30 days</option>
+            <option value="90-days">Within 90 days</option>
+            <option value="exploring">Just exploring my options</option>
+          </select>
+          <span class="rpv-field__error"></span>
+        </div>
+
+        <div class="rpv-field rpv-consent">
+          <input id="lf-consent" name="consent" type="checkbox" value="yes" required>
+          <label for="lf-consent"><span>
+            It's OK to contact me by phone, text and email about my property.
+            Message rates may apply. I can opt out any time.
+          </span></label>
+          <span class="rpv-field__error"></span>
+        </div>
+
+        <button class="rpv-form__submit" type="submit">Send me the report</button>
+
+        <div class="rpv-form__status" role="status" aria-live="polite"></div>
+
+        <p class="rpv-form__note">
+          No obligation. No fees. We never sell your information.
+        </p>
+      </form>
+    </aside>
+
+  </div>
+</section>
+
+<!-- ======================= METHOD ======================= -->
+<section class="method">
+  <div class="method__inner">
+    <p class="rpv-eyebrow method__eyebrow">How the number is built</p>
+
+    <ol class="method__steps">
+      <li class="step">
+        <span class="step__no" aria-hidden="true">01</span>
+        <h3>We pull the real sales</h3>
+        <p>Closed transactions within half a mile of you over the last ninety days — the prices people genuinely paid, not asking prices.</p>
+      </li>
+      <li class="step">
+        <span class="step__no" aria-hidden="true">02</span>
+        <h3>We adjust for your property</h3>
+        <p>Square footage, lot, age, condition, the extension nobody permitted. The details a website never knows about.</p>
+      </li>
+      <li class="step">
+        <span class="step__no" aria-hidden="true">03</span>
+        <h3>You get a range and a reason</h3>
+        <p>A high, a likely and a low — each one showing you which sales it came from, so you can check our working.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= COMPARISON ======================= -->
+<section class="versus">
+  <div class="versus__inner">
+    <h2 class="versus__title">Why online estimates miss</h2>
+
+    <table class="versus__table">
+      <thead>
+        <tr>
+          <th scope="col">What it accounts for</th>
+          <th scope="col">Instant online estimate</th>
+          <th scope="col">Reservoir report</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Recent nearby closings</th><td>Sometimes, often stale</td><td class="yes">Last 90 days</td></tr>
+        <tr><th scope="row">Condition inside</th><td>Never seen it</td><td class="yes">You tell us</td></tr>
+        <tr><th scope="row">Unpermitted work</th><td>Invisible</td><td class="yes">Accounted for</td></tr>
+        <tr><th scope="row">Your street, not your zip</th><td>Zip-level averages</td><td class="yes">Half-mile radius</td></tr>
+        <tr><th scope="row">A person to ask</th><td>No</td><td class="yes">Direct line</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ======================= CLOSER ======================= -->
+<section class="closer">
+  <div class="closer__inner">
+    <h2>Find out before you need to know.</h2>
+    <p>Knowing the number doesn't commit you to anything. Not knowing it costs people real money.</p>
+    <a class="rpv-btn" href="#form">Get my free report</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="foot">
+  <div class="foot__inner">
+    <p class="foot__brand">Reservoir Property Ventures</p>
+    <p class="foot__legal">
+      Reservoir Property Ventures is a real estate investment company. A property
+      report is our own opinion of value and is not a licensed appraisal, nor is
+      it legal, tax or financial advice. We buy property for our own account and
+      intend to profit when we resell it.
+    </p>
+    <p class="foot__copy">© 2026 Reservoir Property Ventures · (555) 010-0199</p>
+  </div>
+</footer>
+
+<script src="../shared/forms/form-config.js"></script>
+<script src="../shared/forms/lead-form.js"></script>
+</body>
+</html>

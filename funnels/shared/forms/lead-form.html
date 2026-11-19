@@ -1,0 +1,81 @@
+<!-- ==========================================================================
+     LEAD CAPTURE FORM — copy-and-paste block
+     --------------------------------------------------------------------------
+     This is the master copy. All three funnel pages use this same markup.
+
+     To put it on a new page you need three things:
+       1. this block, pasted where you want the form
+       2. these lines in the <head>:
+            <link rel="stylesheet" href="../shared/forms/lead-form.css">
+       3. these two lines just before </body>:
+            <script src="../shared/forms/form-config.js"></script>
+            <script src="../shared/forms/lead-form.js"></script>
+
+     THE ONE THING TO CHANGE PER PAGE: the hidden "funnel" field near the top.
+     That's what tells you in GoHighLevel which page the lead came from.
+     ========================================================================== -->
+
+<form class="rpv-form" data-rpv-form novalidate>
+
+  <!-- CHANGE THIS per page: foreclosure-help / seller-data-capture / tiktok-marketing -->
+  <input type="hidden" name="funnel" value="REPLACE-WITH-FUNNEL-NAME">
+
+  <div class="rpv-form__row">
+    <div class="rpv-field">
+      <label for="lf-name">Your name</label>
+      <input id="lf-name" name="full_name" type="text" autocomplete="name"
+             placeholder="Jane Doe" data-label="Your name" required>
+      <span class="rpv-field__error"></span>
+    </div>
+
+    <div class="rpv-field">
+      <label for="lf-phone">Phone</label>
+      <input id="lf-phone" name="phone" type="tel" autocomplete="tel"
+             placeholder="(555) 010-0199" data-label="Phone" required>
+      <span class="rpv-field__error"></span>
+    </div>
+  </div>
+
+  <div class="rpv-field">
+    <label for="lf-email">Email</label>
+    <input id="lf-email" name="email" type="email" autocomplete="email"
+           placeholder="jane@example.com" data-label="Email" required>
+    <span class="rpv-field__error"></span>
+  </div>
+
+  <div class="rpv-field">
+    <label for="lf-address">Property address</label>
+    <input id="lf-address" name="property_address" type="text" autocomplete="street-address"
+           placeholder="128 Mill Creek Rd, Springfield" data-label="Property address" required>
+    <span class="rpv-field__error"></span>
+  </div>
+
+  <div class="rpv-field">
+    <label for="lf-timeline">How soon do you need to move?</label>
+    <select id="lf-timeline" name="timeline" data-label="Timeline" required>
+      <option value="">Choose one…</option>
+      <option value="asap">As soon as possible</option>
+      <option value="30-days">Within 30 days</option>
+      <option value="90-days">Within 90 days</option>
+      <option value="exploring">Just exploring my options</option>
+    </select>
+    <span class="rpv-field__error"></span>
+  </div>
+
+  <div class="rpv-field rpv-consent">
+    <input id="lf-consent" name="consent" type="checkbox" value="yes" required>
+    <label for="lf-consent"><span>
+      It's OK to contact me by phone, text and email about my property.
+      Message rates may apply. I can opt out any time.
+    </span></label>
+    <span class="rpv-field__error"></span>
+  </div>
+
+  <button class="rpv-form__submit" type="submit">Get my options</button>
+
+  <div class="rpv-form__status" role="status" aria-live="polite"></div>
+
+  <p class="rpv-form__note">
+    No obligation. No fees. We never sell your information.
+  </p>
+</form>

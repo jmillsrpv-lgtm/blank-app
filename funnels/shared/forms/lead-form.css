@@ -1,0 +1,252 @@
+/* ==========================================================================
+   LEAD FORM — SHARED STYLES
+   --------------------------------------------------------------------------
+   The same form is used on all three funnels, but it looks different on each
+   one. That's done with the variables below: each funnel's page.css sets its
+   own values, and the form picks them up.
+
+   Don't edit this file to restyle one page — set the variables in that page's
+   page.css instead.
+   ========================================================================== */
+
+/* Defaults live here, on the page root, so that any page (or any wrapper
+   such as .form-card or .worksheet) can override them for the form inside it.
+   Setting them on .rpv-form itself would block that. */
+:root {
+  --form-text:        var(--rpv-ink);
+  --form-label:       var(--rpv-slate);
+  --form-field-bg:    var(--rpv-white);
+  --form-field-text:  var(--rpv-ink);
+  --form-border:      rgba(10, 31, 43, 0.20);
+  --form-border-focus:var(--rpv-teal);
+  --form-radius:      10px;
+  --form-accent:      var(--rpv-amber);
+  --form-accent-text: var(--rpv-ink);
+  --form-error:       #C0392B;
+}
+
+.rpv-form {
+  display: grid;
+  gap: 18px;
+  color: var(--form-text);
+}
+
+/* Two fields side by side on wider screens ------------------------------- */
+.rpv-form__row {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 560px) {
+  .rpv-form__row { grid-template-columns: 1fr; }
+}
+
+/* A single field --------------------------------------------------------- */
+.rpv-field { display: grid; gap: 7px; min-width: 0; }
+
+.rpv-field > label {
+  font-family: var(--rpv-font-sans);
+  font-size: 12.5px;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--form-label);
+}
+
+.rpv-field input,
+.rpv-field select,
+.rpv-field textarea {
+  font-family: var(--rpv-font-sans);
+  font-size: 16px;            /* 16px stops iPhones zooming in on tap */
+  line-height: 1.4;
+  width: 100%;
+  padding: 14px 15px;
+  color: var(--form-field-text);
+  background: var(--form-field-bg);
+  border: 1.5px solid var(--form-border);
+  border-radius: var(--form-radius);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  appearance: none;
+}
+
+.rpv-field textarea { min-height: 96px; resize: vertical; }
+
+.rpv-field select {
+  /* custom dropdown arrow, so it looks the same in every browser */
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%235C7079' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 12px;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.rpv-field input:focus,
+.rpv-field select:focus,
+.rpv-field textarea:focus {
+  outline: none;
+  border-color: var(--form-border-focus);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--form-border-focus) 22%, transparent);
+}
+
+.rpv-field input::placeholder,
+.rpv-field textarea::placeholder {
+  color: color-mix(in srgb, var(--form-field-text) 42%, transparent);
+}
+
+/* Error state ------------------------------------------------------------ */
+.rpv-field__error {
+  font-size: 13px;
+  font-weight: 550;
+  color: var(--form-error);
+  min-height: 0;
+}
+
+.rpv-field.is-invalid input,
+.rpv-field.is-invalid select,
+.rpv-field.is-invalid textarea {
+  border-color: var(--form-error);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--form-error) 16%, transparent);
+}
+
+/* Consent checkbox ------------------------------------------------------- */
+.rpv-consent {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+/* the consent label is a sentence, not a field label — undo the caps style */
+.rpv-consent > label {
+  font-size: 13.5px;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+  color: color-mix(in srgb, var(--form-text) 72%, transparent);
+  cursor: pointer;
+}
+
+.rpv-consent input[type="checkbox"] {
+  width: 21px;
+  height: 21px;
+  margin: 2px 0 0;
+  flex: none;
+  accent-color: var(--form-accent);
+  cursor: pointer;
+}
+
+.rpv-consent span {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--form-text) 72%, transparent);
+}
+
+.rpv-consent .rpv-field__error { grid-column: 2; }
+
+/* Submit button ---------------------------------------------------------- */
+.rpv-form__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  font-family: var(--rpv-font-sans);
+  font-size: 17px;
+  font-weight: 700;
+  padding: 18px 26px;
+  border: 0;
+  border-radius: var(--form-radius);
+  background: var(--form-accent);
+  color: var(--form-accent-text);
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+}
+
+.rpv-form__submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 14px 30px -12px color-mix(in srgb, var(--form-accent) 85%, transparent);
+}
+
+.rpv-form__submit:disabled { opacity: 0.7; cursor: wait; }
+
+.rpv-form__spinner {
+  width: 16px; height: 16px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: rpv-spin 0.7s linear infinite;
+}
+
+@keyframes rpv-spin { to { transform: rotate(360deg); } }
+
+/* Small print under the button ------------------------------------------ */
+.rpv-form__note {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  text-align: center;
+  color: color-mix(in srgb, var(--form-text) 58%, transparent);
+}
+
+.rpv-form__status { font-size: 14px; font-weight: 600; }
+.rpv-form__status.is-error { color: var(--form-error); }
+
+/* Thank-you panel that replaces the form -------------------------------- */
+.rpv-form__done {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 6px;
+  padding: 18px 4px;
+  color: var(--rpv-ink);
+}
+
+.rpv-form__tick { width: 54px; height: 54px; color: var(--rpv-teal); margin-bottom: 6px; }
+
+.rpv-form__done h3 {
+  font-family: var(--rpv-font-display);
+  font-size: 27px;
+  margin: 0;
+  color: inherit;
+}
+
+.rpv-form__done p { margin: 0; font-size: 15.5px; opacity: 0.8; max-width: 44ch; }
+
+/* Only visible while in preview mode ------------------------------------- */
+.rpv-form__preview-note {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  margin-top: 22px;
+  padding: 16px;
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.5;
+  background: rgba(20, 112, 125, 0.07);
+  border: 1px dashed rgba(20, 112, 125, 0.45);
+  border-radius: var(--form-radius);
+  color: var(--rpv-ink);
+}
+
+.rpv-form__preview-note code {
+  font-family: var(--rpv-font-tech);
+  font-size: 12px;
+  background: rgba(10, 31, 43, 0.08);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.rpv-form__preview-note pre {
+  margin: 0;
+  padding: 12px;
+  overflow-x: auto;
+  font-family: var(--rpv-font-tech);
+  font-size: 11.5px;
+  line-height: 1.55;
+  background: var(--rpv-ink);
+  color: #BFEDE9;
+  border-radius: 8px;
+}
