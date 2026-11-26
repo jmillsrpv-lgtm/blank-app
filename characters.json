@@ -1,0 +1,25 @@
+{
+  "_readme": "CHARACTER LOCK. This exact wording is attached to every image and video request so Mammon and JT look the same in every scene of every episode. Change the words here and you change the character everywhere. Put 2-3 reference picture URLs in each referenceImages list (see README section 'Your reference pictures').",
+
+  "mammon": {
+    "name": "Mr. Mammon",
+    "side": "right",
+    "description": "Mr. Mammon, an early-1900s ghostly banker demon. Gaunt, tall, pale grey skin with a faint cold glow, as if lit from inside. Sharp cheekbones, thin lips held in a fond small smile, deep-set eyes with a warm amber light in them. Two small dark horns curving back from his hairline, half-hidden in slicked-back black hair with grey at the temples. He wears a charcoal pinstripe three-piece suit, high starched white collar, dark silk cravat with a gold pin, and a heavy gold pocket watch on a chain across his waistcoat. A worn leather ledger book is tucked under one arm. Thin, elegant hands. Courtly, unhurried, affectionate in manner, like a man remembering old friends warmly.",
+    "voice": "An old-money American banker from around 1910. Warm, slow, amused, intimate. Low and smooth, a touch of gravel. He speaks fondly, never angrily. The cruelty is in the content, never in the tone. Think a kind grandfather telling a bedtime story he loves.",
+    "voiceId": "PUT_YOUR_ELEVENLABS_MAMMON_VOICE_ID_HERE",
+    "referenceImages": []
+  },
+
+  "jt": {
+    "name": "JT",
+    "side": "left",
+    "description": "JT, a man in his late thirties, ordinary and grounded. Short dark hair under a well-worn navy baseball cap, light stubble, friendly tired eyes. Plain dark crewneck t-shirt. Sits square to the microphone with a flat, deadpan expression, eyebrows slightly raised, the look of a man who has heard something appalling and is choosing his words.",
+    "voice": "Modern American, flat and dry. Deadpan. Short sentences. No theatre, no outrage, just the straight man landing a quiet line.",
+    "voiceId": "PUT_YOUR_ELEVENLABS_JT_VOICE_ID_HERE",
+    "referenceImages": []
+  },
+
+  "set": {
+    "description": "A fake podcast set shot head-on. Two guests at one wide dark wood desk, each with a vintage broadcast microphone on a boom arm. JT sits on the LEFT of frame, Mr. Mammon on the RIGHT. Behind them a dim study: tall shelves of ledgers, a brass desk lamp, heavy green-black wallpaper, a single warm key light and deep shadow in the corners. Vertical 9:16 framing, both characters visible from the chest up, camera locked off and still."
+  }
+}

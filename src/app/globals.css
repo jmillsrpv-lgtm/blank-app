@@ -1,0 +1,565 @@
+/* ============================================================
+   THE PRICE OF PROFIT - the look.
+   Old money. A private banker's study at midnight. Gold on black.
+   Ruled ledger lines, hairline rules, no rounded boxes anywhere.
+   ============================================================ */
+
+:root {
+  --ink: #0a0806;
+  --ink-raised: #100d0a;
+  --gold: #f2c14e;
+  --gold-dim: #9a7a2e;
+  --gold-faint: rgba(242, 193, 78, 0.16);
+  --cream: #ede4d3;
+  --muted: #8a8070;
+  --faint: #5c5447;
+  --rule: rgba(242, 193, 78, 0.22);
+  --rule-soft: rgba(237, 228, 211, 0.1);
+  --red: #c4574a;
+  --green: #7f9b6a;
+
+  --display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
+    Georgia, "Times New Roman", serif;
+  --label: ui-monospace, "SFMono-Regular", "DejaVu Sans Mono", Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--display);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Lamplight from above, deep shadow in the corners. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 70% at 50% -10%, rgba(242, 193, 78, 0.07), transparent 60%),
+    radial-gradient(100% 100% at 50% 50%, transparent 40%, rgba(0, 0, 0, 0.72) 100%);
+  z-index: 0;
+}
+
+/* A little tooth in the paper, so it is not a flat screen. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.shell {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 72px 28px 120px;
+}
+
+/* ---------- Masthead ---------- */
+
+.masthead {
+  text-align: center;
+  padding-bottom: 34px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.crest {
+  font-family: var(--label);
+  font-size: 10px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 20px;
+}
+
+.wordmark {
+  font-size: clamp(38px, 9vw, 62px);
+  line-height: 0.92;
+  margin: 0;
+  font-weight: 400;
+  color: var(--gold);
+  letter-spacing: 0.01em;
+}
+
+.wordmark em {
+  display: block;
+  font-style: normal;
+  font-size: 0.52em;
+  letter-spacing: 0.3em;
+  color: var(--cream);
+  margin-top: 14px;
+  text-transform: uppercase;
+}
+
+.standfirst {
+  margin: 22px auto 0;
+  max-width: 400px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ---------- Field rows: underline, never a box ---------- */
+
+.field {
+  margin-top: 44px;
+}
+
+.field-label {
+  display: block;
+  font-family: var(--label);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 14px;
+}
+
+.field input[type="text"],
+.field select {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  color: var(--cream);
+  font-family: var(--display);
+  font-size: 26px;
+  padding: 10px 2px 14px;
+  outline: none;
+  border-radius: 0;
+  transition: border-color 0.2s ease;
+}
+
+.field input[type="text"]::placeholder {
+  color: var(--faint);
+  font-style: italic;
+}
+
+.field input[type="text"]:focus,
+.field select:focus {
+  border-bottom-color: var(--gold);
+}
+
+.field select {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' fill='none'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23f2c14e' stroke-width='1.4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+}
+
+.field select option {
+  background: var(--ink-raised);
+  color: var(--cream);
+}
+
+/* ---------- The ledger: cost estimate ---------- */
+
+.ledger {
+  margin-top: 46px;
+  padding-top: 26px;
+  border-top: 1px solid var(--rule);
+}
+
+.ledger-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--label);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 20px;
+}
+
+.ledger-line {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 7px 0;
+  font-size: 15px;
+}
+
+.ledger-line .what {
+  color: var(--cream);
+  white-space: nowrap;
+}
+
+.ledger-line .note {
+  color: var(--faint);
+  font-size: 12px;
+  font-family: var(--label);
+  white-space: nowrap;
+}
+
+/* The dotted leader, like a printed bill of costs. */
+.ledger-line .leader {
+  flex: 1;
+  border-bottom: 1px dotted var(--rule-soft);
+  transform: translateY(-4px);
+  min-width: 18px;
+}
+
+.ledger-line .sum {
+  font-family: var(--label);
+  font-size: 14px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.ledger-total {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+}
+
+.ledger-total .what {
+  font-size: 13px;
+  font-family: var(--label);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+
+.ledger-total .leader {
+  flex: 1;
+}
+
+.ledger-total .sum {
+  font-size: 34px;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+
+.cap-note {
+  margin-top: 12px;
+  font-family: var(--label);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--faint);
+}
+
+.cap-note.over {
+  color: var(--red);
+}
+
+/* ---------- The button: a bar of gold leaf ---------- */
+
+.make {
+  display: block;
+  width: 100%;
+  margin-top: 40px;
+  padding: 22px;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  background: linear-gradient(180deg, #f7d274 0%, #e0ad3c 52%, #c2902c 100%);
+  color: #19120a;
+  font-family: var(--label);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  box-shadow: inset 0 1px 0 rgba(255, 245, 214, 0.65);
+  transition: filter 0.18s ease, transform 0.18s ease;
+}
+
+.make:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.make:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.make:disabled {
+  background: none;
+  border: 1px solid var(--rule);
+  color: var(--faint);
+  box-shadow: none;
+  cursor: default;
+}
+
+.make.secondary {
+  background: none;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  box-shadow: none;
+  margin-top: 16px;
+}
+
+/* ---------- The run: numbered ledger of steps ---------- */
+
+.run {
+  margin-top: 50px;
+  padding-top: 28px;
+  border-top: 1px solid var(--rule);
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 30px 1fr auto;
+  gap: 16px;
+  align-items: baseline;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.step-no {
+  font-family: var(--label);
+  font-size: 11px;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.step-name {
+  font-size: 19px;
+  color: var(--faint);
+  transition: color 0.3s ease;
+}
+
+.step-detail {
+  display: block;
+  font-family: var(--label);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--faint);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.step-mark {
+  font-family: var(--label);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--faint);
+}
+
+.step[data-status="running"] .step-name {
+  color: var(--gold);
+}
+
+.step[data-status="running"] .step-mark {
+  color: var(--gold);
+}
+
+.step[data-status="done"] .step-name {
+  color: var(--cream);
+}
+
+.step[data-status="done"] .step-mark {
+  color: var(--green);
+}
+
+.step[data-status="failed"] .step-name,
+.step[data-status="failed"] .step-mark,
+.step[data-status="failed"] .step-detail {
+  color: var(--red);
+}
+
+/* A hairline of gold filling in as the step runs. */
+.step-bar {
+  grid-column: 2 / 4;
+  height: 1px;
+  background: var(--rule-soft);
+  margin-top: 12px;
+}
+
+.step-bar span {
+  display: block;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.5s ease;
+}
+
+.spent {
+  margin-top: 24px;
+  font-family: var(--label);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* The masthead already draws a rule, so the next section must not draw
+   a second one right under it. */
+.masthead + .ledger,
+.masthead + .run,
+.masthead + .finished {
+  border-top: 0;
+  margin-top: 34px;
+  padding-top: 0;
+}
+
+/* ---------- Finished ---------- */
+
+.finished {
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid var(--rule);
+}
+
+.finished h2 {
+  font-size: 13px;
+  font-family: var(--label);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin: 0 0 22px;
+  font-weight: 400;
+}
+
+.finished video {
+  width: 100%;
+  max-width: 320px;
+  display: block;
+  margin: 0 auto 26px;
+  border: 1px solid var(--rule);
+  background: #000;
+}
+
+.download {
+  display: block;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(180deg, #f7d274 0%, #e0ad3c 52%, #c2902c 100%);
+  color: #19120a;
+  text-decoration: none;
+  font-family: var(--label);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  box-shadow: inset 0 1px 0 rgba(255, 245, 214, 0.65);
+}
+
+.caption-block {
+  margin-top: 34px;
+}
+
+.caption-text {
+  white-space: pre-wrap;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--cream);
+  border-left: 1px solid var(--rule);
+  padding: 4px 0 4px 20px;
+  margin: 0 0 18px;
+}
+
+.copy {
+  background: none;
+  border: 1px solid var(--rule);
+  color: var(--gold);
+  padding: 13px 24px;
+  font-family: var(--label);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 0;
+  transition: border-color 0.2s ease;
+}
+
+.copy:hover {
+  border-color: var(--gold);
+}
+
+/* ---------- Notices ---------- */
+
+.notice {
+  margin-top: 30px;
+  padding: 18px 20px;
+  border-left: 2px solid var(--gold);
+  background: rgba(242, 193, 78, 0.05);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--cream);
+}
+
+.notice.bad {
+  border-left-color: var(--red);
+  background: rgba(196, 87, 74, 0.06);
+}
+
+.notice strong {
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.notice.bad strong {
+  color: var(--red);
+}
+
+.test-flag {
+  display: inline-block;
+  margin-top: 18px;
+  font-family: var(--label);
+  font-size: 9px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--gold-dim);
+  padding: 5px 11px;
+}
+
+.log {
+  margin-top: 30px;
+}
+
+.log summary {
+  font-family: var(--label);
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--faint);
+  cursor: pointer;
+}
+
+.log pre {
+  font-family: var(--label);
+  font-size: 11px;
+  line-height: 1.9;
+  color: var(--muted);
+  white-space: pre-wrap;
+  margin: 16px 0 0;
+}
+
+.colophon {
+  margin-top: 70px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule-soft);
+  text-align: center;
+  font-family: var(--label);
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+@media (max-width: 520px) {
+  .shell {
+    padding: 48px 20px 90px;
+  }
+  .ledger-line .note {
+    display: none;
+  }
+}
